@@ -49,14 +49,14 @@ class TriangleAppTests: XCTestCase {
       throw TriangleError.invalidInput
     }
 
+    if sides[0] + sides[1] <= sides[2] {
+      throw TriangleError.inequalityInput
+    }
+
     if sides[0] == sides[1] && sides[0] == sides[2] {
       return "Segitiga Sama Sisi"
     } else if sides[0] == sides[1] || sides[1] == sides[2] {
       return "Segitiga Sama Kaki"
-    } else if sides[1] + sides[0] <= sides[2] {
-      throw TriangleError.inequalityInput
-    } else if sides[2] - sides[1] <= sides[0] {
-      throw TriangleError.inequalityInput
     } else {
       return "Segitiga Sembarang"
     }
